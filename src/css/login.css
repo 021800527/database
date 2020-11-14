@@ -21,13 +21,76 @@ body{
     height: 100%;
 }
 #login_view{
+    display: flex;
+    flex-direction: row;
     height: 80%;
-    width: 60%;
+    width: 90%;
     position:absolute;
     left: 4%;
     top: 8%;
 }
 #main_img{
     height: 100%;
-    width: 100%;
+    width: 60%;
+}
+#login_img{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 35%;
+}
+#login_img img{
+    width: 35%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+}
+#login_title{
+    width: 94%;
+    height: 7.5%;
+    font-size: 35px;
+    color: rgba(0,235,255);
+    position: relative;
+    top: 8%;
+    padding-left: 6%;
+}
+#user{
+    position: relative;
+    top: 12%;
+    height: 7.5%;
+    width: 90%;
+    margin: 0 auto;
+    background-color: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-top: transparent;
+    border-bottom-color:rgba(0,235,255);
+    outline: none;
+    color:rgba(0,235,255);
+    font-size: 25px;
+}
+#password{
+    position: relative;
+    top: 20%;
+    height: 7.5%;
+    width: 90%;
+    margin: 0 auto;
+    background-color: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-top: transparent;
+    border-bottom-color:rgba(0,235,255);
+    outline: none;
+    color:rgba(0,235,255);
+    font-size: 25px;
+}
+#login{
+    position: relative;
+    top: 35%;
+    height: 10%;
+    width: 90%;
+    margin: 0 auto;
+    background-color: rgba(0,237,255);
+    font-size: 35px;
+    color: white;
 }
