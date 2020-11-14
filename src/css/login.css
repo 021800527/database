@@ -39,7 +39,7 @@ body{
     height: 100%;
     width: 35%;
 }
-#login_img img{
+#login_img_img{
     width: 35%;
     height: 100%;
     position: absolute;
@@ -93,4 +93,39 @@ body{
     background-color: rgba(0,237,255);
     font-size: 35px;
     color: white;
+}
+#no_count{
+    margin: 0 auto;
+    height: 3.75%;
+    font-size: 17.5px;
+    color: rgba(0,235,255);
+    position: relative;
+    top: 40%;
+}
+#other_count{
+    margin: 0 auto;
+    height: 2.375%;
+    font-size: 9px;
+    color: rgba(44,125,166);
+    position: relative;
+    top: 42%;
+}
+#other_counts{
+    display: flex;
+    flex-direction: row;
+    height: 14.75%;
+    position: relative;
+    top: 46%;
+}
+#weibo_img{
+    height: 100%;
+    margin: 0 auto;
+}
+#wechat_img{
+    height: 100%;
+    margin: 0 auto;
+}
+#qq_img{
+    height: 100%;
+    margin: 0 auto;
 }
