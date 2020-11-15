@@ -128,10 +128,9 @@ body{
     margin: 0 auto;
 }
 #wechat_img{
-    height: 95%;
+    height: 98.75%;
     margin: 0 auto;
-    position: relative;
-    top: 5%;
+    padding: 1.25%;
 }
 #qq_img{
     height: 100%;
