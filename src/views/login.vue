@@ -23,10 +23,13 @@
 
 <script>
 export default {
-  name: 'login'
+  name: 'login',
+  methods:{
+  }
 }
 </script>
 
 <style>
+
 @import url('../css/login.css');
 </style>

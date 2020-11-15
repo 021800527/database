@@ -85,6 +85,7 @@ body{
     font-size: 25px;
 }
 #login{
+    padding: 0;
     position: relative;
     top: 35%;
     height: 10%;
@@ -92,7 +93,12 @@ body{
     margin: 0 auto;
     background-color: rgba(0,237,255);
     font-size: 35px;
+    border: 0;
     color: white;
+}
+#login:focus{
+    outline: none;
+    background-color: rgba(100,237,255);
 }
 #no_count{
     margin: 0 auto;
