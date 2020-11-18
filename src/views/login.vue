@@ -32,12 +32,10 @@ export default {
   },
   methods:{
     login:function() {
-      this.$axios.post('localhost:5000/login:5000',{
-        params:{
-          name:this.name,
-          psd :this.psd
-        }
-      }).then(response=>{
+      this.$axios.post('http://localhost:5000/login',this.qs.stringify({
+        name:"021800527",
+        psd :"123456"
+      })).then(response=>{
         console.log(response.data)
       })
     }
