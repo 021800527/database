@@ -1,7 +1,9 @@
 <template>
   <div id="max_box">
-    <loading id="loading" v-bind:style="{display:LoadingFlag?'none':''}"></loading>
-    <div id="background">
+    <loading class="tip" v-bind:style="{display:LoadingFlag?'none':''}"></loading>
+    <dv-loading class="tip" v-bind:style="{display:statue_success?'none':''}">登录成功</dv-loading>
+    <dv-loading class="tip" v-bind:style="{display:statue_fail?'none':''}">密码错误</dv-loading>
+    <div id="background" v-bind:style="{opacity:LoadingFlag?'1':'0.6'}">
       <img id="background_img" src="../assets/background.jpg">
       <div id="login_view">
         <img id="main_img" src="../assets/main_img.png">
@@ -31,23 +33,39 @@ export default {
   components:{loading},
   data:function (){
     return{
-      name : '',
-      psd  : '',
-      LoadingFlag : true
+      name : this.name,
+      psd  : this.psd,
+      LoadingFlag : true,
+      statue_success:true,
+      statue_fail:true
     }
   },
   methods:{
     login:function() {
       this.LoadingFlag = false
-      let that = this
-      setTimeout(function (){
-        that.LoadingFlag = true
-      },2000)
       this.$axios.post('http://localhost:5000/login',this.qs.stringify({
         name:this.name,
         psd :this.psd
       })).then(response=>{
-        console.log(response.data)
+        if(response.data =='login_success'){
+          this.LoadingFlag = true
+          this.statue_success = false
+          let that = this
+          setTimeout(function (){
+            that.statue_success = true
+          },1000)
+        }
+        else {
+          this.LoadingFlag = true
+          this.statue_fail = false
+          if (response.data == 'password_error') {
+            this.statue_fail = false
+            let that = this
+            setTimeout(function () {
+              that.statue_fail = true
+            }, 1000)
+          }
+        }
       })
     },
     // 设置拦截器
