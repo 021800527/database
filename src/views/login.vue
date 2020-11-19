@@ -38,11 +38,6 @@ export default {
   },
   methods:{
     login:function() {
-      this.LoadingFlag = false
-      let that = this
-      setTimeout(function (){
-        that.LoadingFlag = true
-      },3000)
       this.$axios.post('http://localhost:5000/login',this.qs.stringify({
         name:this.name,
         psd :this.psd
@@ -55,6 +50,11 @@ export default {
       this.$axios.interceptors.request.use(
           //  发送前做点什么
           function (config){
+            this.LoadingFlag = false
+            let that = this
+            setTimeout(function (){
+              that.LoadingFlag = true
+            },2000)
             return config
           }
       )
