@@ -1,5 +1,5 @@
 <template>
-  <dv-loading>Loading...</dv-loading>
+  <dv-loading>登陆验证中</dv-loading>
 </template>
 
 <script>
