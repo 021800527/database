@@ -67,6 +67,9 @@ export default {
           }
         }
       })
+      .catch(function (error) {
+        console.log(error)
+      })
     },
     // 设置拦截器
     loading:function () {
