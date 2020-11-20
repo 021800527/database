@@ -49,7 +49,6 @@ export default {
         name:this.name,
         psd :this.psd
       })).then(response=>{
-        console.log(response)
         if(response.data =='login_success'){
           this.LoadingFlag = true
           this.statue_success = false
