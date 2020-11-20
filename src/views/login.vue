@@ -3,6 +3,7 @@
     <loading class="tip" v-bind:style="{display:LoadingFlag?'none':''}"></loading>
     <dv-loading class="tip" v-bind:style="{display:statue_success?'none':''}">登录成功</dv-loading>
     <dv-loading class="tip" v-bind:style="{display:statue_fail?'none':''}">密码错误</dv-loading>
+    <dv-loading class="tip" v-bind:style="{display:statue_Network_Error?'none':''}">网络错误</dv-loading>
     <div id="background" v-bind:style="{opacity:LoadingFlag?'1':'0.6'}">
       <img id="background_img" src="../assets/background.jpg">
       <div id="login_view">
@@ -37,7 +38,8 @@ export default {
       psd  : this.psd,
       LoadingFlag : true,
       statue_success:true,
-      statue_fail:true
+      statue_fail:true,
+      statue_Network_Error:true
     }
   },
   methods:{
@@ -47,6 +49,7 @@ export default {
         name:this.name,
         psd :this.psd
       })).then(response=>{
+        console.log(response)
         if(response.data =='login_success'){
           this.LoadingFlag = true
           this.statue_success = false
@@ -67,8 +70,14 @@ export default {
           }
         }
       })
-      .catch(function (error) {
-        console.log(error)
+      .catch(error=>{
+          console.log(error)
+          this.LoadingFlag = true
+          this.statue_Network_Error = false
+          let that = this
+          setTimeout(function () {
+            that.statue_Network_Error = true
+          }, 1000)
       })
     },
     // 设置拦截器
