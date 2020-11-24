@@ -14,11 +14,46 @@ body{
     width: 100%;
     height: 100%;
 }
+#background_img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+}
+#up{
+    position: absolute;
+    left: 3%;
+    color: cornflowerblue;
+    text-align: center;
+    width: 90%;
+    height: 5%;
+    font-family: 华文隶书;
+    font-size: 300%;
+    -webkit-animation:title_no_move 400ms 1;
+}
 #left{
     width: 3%;
     height: 100%;
-    background-color: navy;
-    -webkit-animation:nomove 1s 1;
+    background-color: rgba(19,42,128);
+    opacity: 0.3;
+    -webkit-box-shadow: 0 0 30px white;
+    -webkit-animation:no_move 400ms 1;
+}
+.logo.active{
+    width: 100%;
+    height: 40%;
+}
+.logo{
+    width: 100%;
+    height: 40%;
+}
+#title{
+    position: relative;
+    left: 30%;
+    writing-mode: vertical-rl;
+    font-size: 250%;
+    color: white;
+    font-family: 华文琥珀;
 }
 @-webkit-keyframes move
 {
@@ -28,4 +63,13 @@ body{
 @-webkit-keyframes no_move {
     from{width: 3%}
     to{width: 3%}
+}
+@-webkit-keyframes title_no_move {
+    from{left: 3%}
+    to{left: 3%}
+}
+@-webkit-keyframes title_move
+{
+    from{left:3%;}
+    to{left: 10%;}
 }
