@@ -1,6 +1,6 @@
 <template>
   <div id="max_box">
-    <div id="left" v-on:mouseenter="check_enter" @mouseleave="check_leave" v-bind:style="{width :enter?'10%':'3%'}"></div>
+    <div id="left" v-on:mouseenter="check_enter" @mouseleave="check_leave" v-bind:style="{'-webkit-animation':enter?'move 1s 1 forwards':'no_move 1s 1'}"></div>
   </div>
 </template>
 

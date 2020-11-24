@@ -17,5 +17,15 @@ body{
 #left{
     width: 3%;
     height: 100%;
-    background-color: rgba(34,56,64);
+    background-color: navy;
+    -webkit-animation:nomove 1s 1;
+}
+@-webkit-keyframes move
+{
+    from{width:3%;}
+    to{width: 10%;}
+}
+@-webkit-keyframes no_move {
+    from{width: 3%}
+    to{width: 3%}
 }
