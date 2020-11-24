@@ -4,7 +4,7 @@
     <div id="up" v-bind:style="{'-webkit-animation':enter?'title_move 400ms 1 forwards':'title_no_move 400ms 1'}" >千金难买我开心</div>
     <div id="left" ref="check_width" v-on:mouseenter="check_enter" @mouseleave="check_leave" v-bind:style="{'-webkit-animation':enter?'move 400ms 1 forwards':'no_move 400ms 1'}">
       <div class="logo" v-bind:class="{active:enter}">
-        <p id="title" v-show="enter">福州大学选修课系统</p>
+        <div id="title" v-show="enter" v-bind:style="{'-webkit-animation':enter?'p_move 400ms 1 forwards':'no_p_move 400ms 1'}">福州大学选修课系统</div>
       </div>
     </div>
   </div>
