@@ -56,6 +56,7 @@ export default {
           setTimeout(function (){
             that.statue_success = true
           },1000)
+          this.$router.push({name:'index'})
         }
         else {
           this.LoadingFlag = true
