@@ -87,3 +87,40 @@ body{
     from{left:3%;}
     to{left: 10%;}
 }
+#buttons{
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    width: 98%;
+
+}
+#myClass{
+    overflow: hidden;
+    height: 8%;
+    width: 100%;
+    font-size: 200%;
+    color: white;
+    border: 2px #00edff solid;
+    text-align: center;
+    margin-top: 10%;
+}
+#myChoose{
+    overflow: hidden;
+    height: 8%;
+    width: 100%;
+    font-size: 200%;
+    color: white;
+    border: 2px #00edff solid;
+    text-align: center;
+    margin-top: 10%;
+}
+#outcome{
+    overflow: hidden;
+    height: 8%;
+    width: 100%;
+    font-size: 200%;
+    color: white;
+    border: 2px #00edff solid;
+    text-align: center;
+    margin-top: 10%;
+}
