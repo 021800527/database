@@ -5,6 +5,9 @@
     <dv-loading class="tip" v-bind:style="{display:statue_fail?'none':''}">密码错误</dv-loading>
     <dv-loading class="tip" v-bind:style="{display:statue_Network_Error?'none':''}">网络错误</dv-loading>
     <div id="background" v-bind:style="{opacity:LoadingFlag?'1':'0.6'}">
+    <div id="process">
+      <img src="../assets/process.gif" alt="">
+    </div>  
     <div class="login">
       <div class="login-wrapper">
         <div class="left-bgc">
@@ -46,8 +49,6 @@ export default {
         username: '',
         password: '',
       },
-      name : this.name,
-      psd  : this.psd,
       LoadingFlag : true,
       statue_success:true,
       statue_fail:true,
@@ -58,8 +59,8 @@ export default {
     login:function() {
       this.LoadingFlag = false
       this.$axios.post('http://fzuyhgg.top:5000/login',this.qs.stringify({
-        name:this.name,
-        psd :this.psd
+        name:this.form.username,
+        psd :this.form.password
       })).then(response=>{
         if(response.data =='login_success'){
           this.LoadingFlag = true

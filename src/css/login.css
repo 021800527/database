@@ -18,8 +18,23 @@ body{
     width: 100%;
     height: 100%;
 }
+#process{
+    width: auto;
+    height: auto;
+    position: fixed;
+    top: 55%;
+    z-index: -1;
+    -webkit-animation: processMove 30s infinite;
+}
+@-webkit-keyframes processMove{
+    from{left:-25%;}
+    to{left: 100%;}
+}
+#process img{
+    height: 100%;
+}
 .tip{
-    color: white;
+    color: #DB7093;
     position: absolute;
     z-index: 1;
 }
