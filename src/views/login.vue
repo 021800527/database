@@ -5,24 +5,32 @@
     <dv-loading class="tip" v-bind:style="{display:statue_fail?'none':''}">密码错误</dv-loading>
     <dv-loading class="tip" v-bind:style="{display:statue_Network_Error?'none':''}">网络错误</dv-loading>
     <div id="background" v-bind:style="{opacity:LoadingFlag?'1':'0.6'}">
-      <img id="background_img" src="../assets/background.jpg">
-      <div id="login_view">
-        <img id="main_img" src="../assets/main_img.png">
-        <div id="login_img">
-        <img src="../assets/login_img.png" id="login_img_img">
-        <div id="login_title" >登录</div>
-        <input id="user" placeholder="学号" type="text" v-model="name">
-        <input id="password" placeholder="密码" type="password" v-model="psd">
-        <input id="login" type="button" value="立即登录" @click="login">
-        <div id="no_count">没有账号？立即注册</div>
-        <div id="other_count">使用第三方登录</div>
-        <div id="other_counts">
-          <img src="../assets/webo.png" id="weibo_img">
-          <img src="../assets/wechat.png" id="wechat_img">
-          <img src="../assets/qq.png" id="qq_img">
+    <div class="login">
+      <div class="login-wrapper">
+        <div class="left-bgc">
+          <el-image :src="require('../assets/firelong.jpg')" fit="cover"></el-image>
         </div>
+        <div class="right-login">
+          <div class="login-title">
+            <span>L 0 G 1 N :</span>
+          </div>
+          <el-form ref="form" :model="form" label-width="40px">
+            <el-form-item>
+              <el-input placeholder="U5ername" v-model="form.username"></el-input>
+            </el-form-item>
+            <el-form-item>
+              <el-input placeholder="Pa55w0rd" type="password" v-model="form.password"></el-input>
+            </el-form-item>
+            <el-form-item>
+              <el-button type="danger" @click="login">登录</el-button>
+            </el-form-item>
+          </el-form>
+          <div class="register">
+            <el-link type="danger">D0 N0t HaVe aN Acc0unt ?</el-link>
+          </div>
         </div>
       </div>
+    </div>
     </div>
   </div>
 </template>
@@ -34,6 +42,10 @@ export default {
   components:{loading},
   data:function (){
     return{
+      form: {
+        username: '',
+        password: '',
+      },
       name : this.name,
       psd  : this.psd,
       LoadingFlag : true,
@@ -97,4 +109,47 @@ export default {
 </script>
 <style>
 @import url('../css/login.css');
+
+.el-button {
+  width: 350px;
+  background-color: #c5708b;
+}
+
+.el-input {
+}
+
+.login {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.login-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.login-wrapper .left-bgc {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
+.right-login {
+  position: absolute;
+  right: 15%;
+  top: 20%;
+}
+
+.login-title {
+  text-shadow: 5px 3px 4px;
+  font-size: 35px;
+  padding: 20px;
+}
+
+.register {
+  text-align: center;
+}
 </style>
