@@ -20,14 +20,13 @@ body{
 }
 #process{
     width: auto;
-    height: auto;
+    height: 48%;
     position: fixed;
-    top: 55%;
-    z-index: -1;
+    top: 58%;
     -webkit-animation: processMove 30s infinite;
 }
 @-webkit-keyframes processMove{
-    from{left:-25%;}
+    from{left:-5%;}
     to{left: 100%;}
 }
 #process img{
