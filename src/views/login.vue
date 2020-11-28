@@ -5,9 +5,6 @@
     <dv-loading class="tip" v-bind:style="{display:statue_fail?'none':''}">密码错误</dv-loading>
     <dv-loading class="tip" v-bind:style="{display:statue_Network_Error?'none':''}">网络错误</dv-loading>
     <div id="background" v-bind:style="{opacity:LoadingFlag?'1':'0.6'}">
-    <div id="process">
-      <img src="../assets/process.gif" alt="">
-    </div>  
     <div class="login">
       <div class="login-wrapper">
         <div class="left-bgc">
@@ -34,6 +31,9 @@
         </div>
       </div>
     </div>
+      <div id="process">
+        <el-image :src="require('../assets/process.gif')" fit="fill" ></el-image>
+      </div>  
     </div>
   </div>
 </template>
@@ -112,36 +112,28 @@ export default {
 @import url('../css/login.css');
 
 .el-button {
-  width: 350px;
+  width: 400px;
   background-color: #c5708b;
-}
-
-.el-input {
 }
 
 .login {
   width: 100vw;
   height: 100vh;
-  position: relative;
 }
 
 .login-wrapper {
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items:center;
+  justify-content:space-around;
+  z-index: 20;
 }
 
 .login-wrapper .left-bgc {
-  width: 80%;
-  height: 80%;
-  position: absolute;
-  top: 10%;
-  left: 10%;
 }
 
 .right-login {
-  position: absolute;
-  right: 15%;
-  top: 20%;
 }
 
 .login-title {
@@ -152,5 +144,11 @@ export default {
 
 .register {
   text-align: center;
+}
+
+#process {
+  width: 90px;
+  position: fixed;
+  top: 0;
 }
 </style>

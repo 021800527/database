@@ -1,15 +1,30 @@
 <template>
-  <div id="max_box">
-    <img src="../assets/background.jpg" id="background_img">
-    <div id="up" v-bind:style="{'-webkit-animation':enter?'title_move 400ms 1 forwards':'title_no_move 400ms 1'}" >千金难买我开心</div>
-    <div id="left" ref="check_width" v-on:mouseenter="check_enter" @mouseleave="check_leave" v-bind:style="{'-webkit-animation':enter?'move 400ms 1 forwards':'no_move 400ms 1'}">
-      <div class="logo" v-bind:class="{active:enter}">
-        <div id="title" v-show="enter" v-bind:style="{'-webkit-animation':enter?'p_move 400ms 1 forwards':'no_p_move 400ms 1'}">福州大学选修课选课系统</div>
+  <div id="max_index_box" class="index-box">
+    <div class="nav">
+      <div class="nav-wrapper">
+        <ul class="nav-ul">
+          <li>
+            <el-image class="elImage" :src="require('../assets/icons8-pokemon.png')"></el-image>
+            <span class="title">课表</span>
+          </li>
+          <li>
+            <el-image class="elImage" :src="require('../assets/pokemon.png')"></el-image>
+            <span class="title">学期选课</span>
+          </li>
+          <li>
+            <el-image class="elImage" :src="require('../assets/pokemon.png')"></el-image>
+            <span class="title">我的选课</span>
+          </li>
+          <li>
+            <el-image class="elImage" :src="require('../assets/pokemon.png')"></el-image>
+            <span class="title">我的成绩</span>
+          </li>
+        </ul>
       </div>
-      <div id="buttons">
-        <div id="myClass" @mouseenter="checkButton_enter0" @mouseleave="checkButton_enter0" v-bind:style="{'background-color':buttons0?'red':'green'}">我的课表</div>
-        <div id="myChoose" @mouseenter="checkButton_enter1" @mouseleave="checkButton_enter1" v-bind:style="{'background-color':buttons1?'red':'green'}">我的选课</div>
-        <div id="outcome" @mouseenter="checkButton_enter2" @mouseleave="checkButton_enter2" v-bind:style="{'background-color':buttons2?'red':'green'}">选课结果</div>
+    </div>
+    <div class="index-body">
+      <div class="calenders">
+        <calenders></calenders>
       </div>
     </div>
   </div>
@@ -20,37 +35,102 @@
 </style>
 
 <script>
+import calenders from '../components/student/calenders.vue';
+
 export default {
   name:'Index',
   data:function (){
     return{
-      enter:false,
-      width:0,
-      buttons0:false,
-      buttons1:false,
-      buttons2:false
+
     }
   },
+  components: {
+    calenders,
+  },
   methods:{
-    check_leave:function (){
-      this.enter = false
-    },
-    check_enter:function (){
-      this.enter  = true
-    },
-    check_width :function (){
-      this.width = this.$refs.check_width.offsetWidth
-      return this.width
-    },
-    checkButton_enter0:function (){
-      this.buttons0 = !this.buttons0;
-    },
-    checkButton_enter1:function (){
-      this.buttons1 = !this.buttons1;
-    },
-    checkButton_enter2:function (){
-      this.buttons2 = !this.buttons1;
-    },
+
   }
 }
 </script>
+
+<style scoped>
+  .title {
+    font-family: "Roboto",arial,sans-serif;
+    font-weight: 500;
+    color: #fff;
+    display: block;
+    font-size: 87.5%;
+    margin: 7px auto;
+    opacity: 1;
+    position: relative;
+    text-align: center;
+    word-wrap: break-word;
+    color: #464646;
+  }
+
+  .index-box {
+    background-image: url(../assets/pokemon_bg.jpg);
+    background-size: cover;
+    max-width: 2518px;
+    min-height:280px;
+  }
+
+  .nav {
+    background: #FFF;
+    border-bottom: 2px solid #f0f0f0;
+    height: 87px;
+    width: 100%;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+  }
+
+  .nav-wrapper {
+    max-width: 895px;
+    margin: 0 auto;
+  }
+
+  .nav-wrapper ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-wrapper ul li {
+    cursor: pointer;
+    height: 87px;
+    margin: 0;
+    overflow: visible;
+    width: 14.28571%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    justify-content: center;
+    transition: all .3s;
+  }
+
+  .nav-wrapper ul li:hover {
+    background-color: rgba(227,53,13, 0.9);
+  }
+
+  .nav-wrapper ul li .elImage{
+    height: 33px;
+    width: 33px;
+  }
+
+  .index-body {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 88px;
+    background-color: #fff;
+    height: 180vh;
+    border-radius: 6px;
+  }
+
+  .index-body .calenders {
+    width: 80%;
+    margin: 0 auto;  
+  }
+</style>
